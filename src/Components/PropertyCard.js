@@ -86,7 +86,7 @@ function PropertyCard() {
                     <div className="col-lg-4 col-md-6 col-sm-12">
                         <div className="card-body">
                             <div className="card-header-part">
-                                <h3 className='mb-4'>Start posting your property, it's free</h3>
+                                <h3 className='mb-4'>Start posting your property, it's free123</h3>
                             </div>
                             <div className="card-body-part mt-4">
                                 <div className="looking-property">
