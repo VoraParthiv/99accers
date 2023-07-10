@@ -5,23 +5,27 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
 import MainInfo from './MainInfo';
 import BasicInfo from './BasicInfo';
 import ProInternalInfo from './ProInternalInfo';
 import OwnerInfo from './OwnerInfo';
 import ProAddress from './ProAddress';
-// import Button from '@mui/material/Button';
-// import SendIcon from '@mui/icons-material/Send';
-// import Stack from '@mui/material/Stack';
 
 function PropertyCard() {
     const [propertyData, setPropertyData] = useState([])
     const [propertyType, setPropertyType] = useState('commercial')
     const [activeTag, setActiveTag] = useState(1);
+    const [subPropertyType, setSubPropertyType] = React.useState('');
+    const [cardCount, setCardCount] = useState(1);
+    const [propertyInfo, setPropertyInfo] = useState({
+        furnitureType: "", authorized: "", measurment: "", totalSize: "", useArea: "", opneArea: "", coverdArea: "",
+        ownerSince: "", availibiltyDate: "", attachment: "", treeCount: "", purchasedFrom: "",
+        maxAsk: "", mainRoadFacing: "", entryGate: "", carParkArea: "", bathrooms: "", pantry: "", cabins: "", workStations: "", conference: "", totalFloors: "", amenities: "", maintainanceFee: "",
+        ownerName: "", ownerDetails: "", contact1: "", contact2: "", ownerStatus: "", nationality: "",
+        state: "", district: "", city: "", landmark: "", area: "", sector: "", flatNo: "", location: "", remarks: "",
+    })
 
-    // // Get List Of Sub Property Type
+    // Get List Of Sub Property Type
     useEffect(() => {
         makeAPIRequest('get', `${API_CONST.view_property}?type=${propertyType}`, null, null, null)
             .then((response) => {
@@ -34,7 +38,7 @@ function PropertyCard() {
     }, [])
 
     // Set backgroundColor of activeTag
-    const handleClick = (tagIndex, type) => {
+    const handleClick = (tagIndex) => {
         setActiveTag(tagIndex);
     };
 
@@ -50,43 +54,42 @@ function PropertyCard() {
     //         })
     // }
 
+    // Show Sub Property
     const showInputFields = (index, subPropertyType) => {
         setSubPropertyType(subPropertyType)
     }
 
-    const [age, setAge] = React.useState('');
-    const [subPropertyType, setSubPropertyType] = React.useState('');
-
-    const handleChange = (event) => {
-        setAge(event.target.value);
-        setCardCount(1)
-    };
-    const [cardCount, setCardCount] = useState(1);
+    // Show Next Card
     const handleNextCard = () => {
+        console.log(propertyInfo);
         setCardCount(cardCount + 1)
-        console.log(cardCount);
         if (cardCount == 1) {
             document.getElementById(`basic_info`).style.display = "block"
         }
-        else if (cardCount == 2){
+        else if (cardCount == 2) {
             document.getElementById('internal_info').style.display = "block"
         }
-        else if (cardCount == 3){
-            document.getElementById('owner_info').style.display = "block"  
+        else if (cardCount == 3) {
+            document.getElementById('owner_info').style.display = "block"
         }
-        else if (cardCount == 4){
-            document.getElementById('address_info').style.display = "block"  
+        else if (cardCount == 4) {
+            document.getElementById('address_info').style.display = "block"
         }
+    }
+
+    const getPropertyDetails = (event) => {
+        // console.log(event.target.name + " => " + event.target.value);
+        setPropertyInfo({ ...propertyInfo, [event.target.name]: event.target.value })
     }
 
     return (
         <div className='card-main-body'>
             <div className="container">
-                <div className="row align-items-center">
+                <div className="row align-items-start">
                     <div className="col-lg-4 col-md-6 col-sm-12">
                         <div className="card-body">
                             <div className="card-header-part">
-                                <h3 className='mb-4'>Start posting your property, it's free123</h3>
+                                <h3 className='mb-4'>Start posting your property, it's free</h3>
                             </div>
                             <div className="card-body-part mt-4">
                                 <div className="looking-property">
@@ -101,8 +104,8 @@ function PropertyCard() {
                                             name="row-radio-buttons-group"
                                             defaultValue="commercial"
                                         >
-                                            <FormControlLabel value="residential" control={<Radio />} label="Residential" onChange={handleChange} />
-                                            <FormControlLabel value="commercial" control={<Radio />} label="Commercial" onChange={handleChange} />
+                                            <FormControlLabel value="residential" control={<Radio />} label="Residential" />
+                                            <FormControlLabel value="commercial" control={<Radio />} label="Commercial" />
                                         </RadioGroup>
                                     </FormControl>
                                 </div>
@@ -119,14 +122,14 @@ function PropertyCard() {
                                         })
                                     }
                                 </div>
-                                <MainInfo handleNextCard={handleNextCard} cardCount={cardCount} subPropertyType={subPropertyType} />
+                                <MainInfo handleNextCard={handleNextCard} subPropertyType={subPropertyType} getPropertyDetails={getPropertyDetails} />
                             </div>
                         </div>
                     </div>
-                    <BasicInfo handleNextCard={handleNextCard} subPropertyType={subPropertyType} />
-                    <ProInternalInfo handleNextCard={handleNextCard} subPropertyType={subPropertyType} />
-                    <OwnerInfo handleNextCard={handleNextCard} subPropertyType={subPropertyType} />
-                    <ProAddress handleNextCard={handleNextCard} subPropertyType={subPropertyType} />
+                    <BasicInfo handleNextCard={handleNextCard} subPropertyType={subPropertyType} getPropertyDetails={getPropertyDetails} />
+                    <ProInternalInfo handleNextCard={handleNextCard} subPropertyType={subPropertyType} getPropertyDetails={getPropertyDetails} />
+                    <OwnerInfo handleNextCard={handleNextCard} subPropertyType={subPropertyType} getPropertyDetails={getPropertyDetails} />
+                    <ProAddress handleNextCard={handleNextCard} subPropertyType={subPropertyType} getPropertyDetails={getPropertyDetails} />
                 </div>
             </div>
         </div>

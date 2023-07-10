@@ -1,8 +1,7 @@
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 
-function BasicInfo({ handleNextCard, subPropertyType }) {
-    // console.log("🚀 ~ file: BasicInfo.js:5 ~ BasicInfo ~ subPropertyType:", subPropertyType)
+function BasicInfo({ handleNextCard, subPropertyType, getPropertyDetails }) {
     return (
         <>
             {
@@ -19,11 +18,11 @@ function BasicInfo({ handleNextCard, subPropertyType }) {
                             autoComplete="off"
 
                         >
-                            <TextField id="outlined-basic" label="Owenership Since" variant="outlined" style={{ width: "100%", margin: "0", marginTop: "10px" }} />
-                            <TextField className='mt-2' id="outlined-basic" label="Availability Date" variant="outlined" style={{ width: "100%", margin: 0 }} />
-                            <TextField className='mt-2' id="outlined-basic" type='file' variant="outlined" style={{ width: "100%", margin: 0 }} />
-                            <TextField className='mt-2' id="outlined-basic" label="Tree Count" variant="outlined" style={{ width: "100%", margin: 0 }} />
-                            <TextField className='mt-2' id="outlined-basic" label="Purchased From" variant="outlined" style={{ width: "100%", margin: 0 }} />
+                            <TextField name='ownerSince' onChange={getPropertyDetails} id="outlined-basic" label="Owenership Since" variant="outlined" style={{ width: "100%", margin: "0", marginTop: "10px" }} />
+                            <TextField name='availibiltyDate' onChange={getPropertyDetails} className='mt-2' id="outlined-basic" label="Availability Date" variant="outlined" style={{ width: "100%", margin: 0 }} />
+                            <TextField name='attachment' onChange={getPropertyDetails} className='mt-2' id="outlined-basic" type='file' variant="outlined" style={{ width: "100%", margin: 0 }} />
+                            <TextField name='treeCount' onChange={getPropertyDetails} className='mt-2' id="outlined-basic" label="Tree Count" variant="outlined" style={{ width: "100%", margin: 0 }} />
+                            <TextField name='purchasedFrom' onChange={getPropertyDetails} className='mt-2' id="outlined-basic" label="Purchased From" variant="outlined" style={{ width: "100%", margin: 0 }} />
                         </Box>
                         <div className="submit-btn mt-5" onClick={handleNextCard}>
                             <i className="fa-solid fa-forward"></i>
