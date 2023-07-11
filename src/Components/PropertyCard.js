@@ -13,16 +13,20 @@ import ProAddress from './ProAddress';
 
 function PropertyCard() {
     const [propertyData, setPropertyData] = useState([])
-    const [propertyType, setPropertyType] = useState('commercial')
+    const [propertyType, setPropertyType] = useState('residential')
     const [activeTag, setActiveTag] = useState(1);
     const [subPropertyType, setSubPropertyType] = React.useState('');
     const [cardCount, setCardCount] = useState(1);
     const [propertyInfo, setPropertyInfo] = useState({
-        furnitureType: "", authorized: "", measurment: "", totalSize: "", useArea: "", opneArea: "", coverdArea: "",
-        ownerSince: "", availibiltyDate: "", attachment: "", treeCount: "", purchasedFrom: "",
-        maxAsk: "", mainRoadFacing: "", entryGate: "", carParkArea: "", bathrooms: "", pantry: "", cabins: "", workStations: "", conference: "", totalFloors: "", amenities: "", maintainanceFee: "",
-        ownerName: "", ownerDetails: "", contact1: "", contact2: "", ownerStatus: "", nationality: "",
-        state: "", district: "", city: "", landmark: "", area: "", sector: "", flatNo: "", location: "", remarks: "",
+        p_furnitureType: "", p_isAuthorised: "", p_masurementUnit: "", p_totalSize: "", p_useArea: "", p_openArea: "", p_coverArea: "", p_boundries: "",
+
+        p_ownerShipSinces: "", p_availableDate: "", p_treeCount: "", p_purchasedFrom: "", p_attechment: "",
+
+        p_maxAsk: "", p_mainRoadFacing: "", p_entryGate: "", p_carParkArea: "", p_bathrooms: "", p_pantry: "", p_cabins: "", p_workStation: "", p_conference: "", p_totalFloors: "", p_amenities: "", p_maintainanceFees: "", p_balcony: "", p_kitchn: "", p_rooms: "", p_halls: "", p_toilates: "",
+
+        p_ownerName: "", p_ownerDetails: "", p_ownerContact1: "", p_ownerContact12: "", p_ownerStatus: "", p_nationality: "",
+
+        p_state: "", p_district: "", p_city: "", p_landMark: "", p_area: "", p_sector: "", p_flatNo: "", p_latitude: "", p_longitude: "", p_reMarkes: ""
     })
 
     // Get List Of Sub Property Type
@@ -43,16 +47,17 @@ function PropertyCard() {
     };
 
     // Get List Of Sub Property Type when setPropertyType change
-    // const handleChange = (event) => {
-    //     setPropertyType(event.target.value)
-    //     makeAPIRequest('get', `${API_CONST.view_property}?type=${event.target.value}`, null, null, null)
-    //         .then((response) => {
-    //             setPropertyData(response.data.data)
-    //         })
-    //         .catch(async (error) => {
-    //             console.log(error);
-    //         })
-    // }
+    const handleChange = (event) => {
+        setPropertyType(event.target.value)
+        makeAPIRequest('get', `${API_CONST.view_property}?type=${event.target.value}`, null, null, null)
+            .then((response) => {
+                // console.log("🚀 ~ file: PropertyCard.js:50 ~ .then ~ response:", response)
+                setPropertyData(response.data.data)
+            })
+            .catch(async (error) => {
+                console.log(error);
+            })
+    }
 
     // Show Sub Property
     const showInputFields = (index, subPropertyType) => {
@@ -61,25 +66,47 @@ function PropertyCard() {
 
     // Show Next Card
     const handleNextCard = () => {
-        console.log(propertyInfo);
         setCardCount(cardCount + 1)
         if (cardCount == 1) {
             document.getElementById(`basic_info`).style.display = "block"
         }
         else if (cardCount == 2) {
-            document.getElementById('internal_info').style.display = "block"
+            if (subPropertyType != "hotel") {
+                document.getElementById('internal_info').style.display = "block"
+            }
         }
         else if (cardCount == 3) {
-            document.getElementById('owner_info').style.display = "block"
+            if (subPropertyType != "hotel") {
+                document.getElementById('owner_info').style.display = "block"
+            }
         }
         else if (cardCount == 4) {
-            document.getElementById('address_info').style.display = "block"
+            if (subPropertyType != "hotel") {
+                document.getElementById('address_info').style.display = "block"
+            }
         }
     }
 
+    // Get All Information Of Property
     const getPropertyDetails = (event) => {
-        // console.log(event.target.name + " => " + event.target.value);
         setPropertyInfo({ ...propertyInfo, [event.target.name]: event.target.value })
+    }
+    const getPropertyDetails1 = (event) => {
+        console.log("🚀 ~ file: PropertyCard.js:95 ~ getPropertyDetails1 ~ event:", event.target.files[0])
+        // setPropertyInfo({ ...propertyInfo, [event.target.name]: event.target.value })
+    }
+    
+    // Property Data Submit
+    const formSubmit = (e) => {
+        e.preventDefault()
+        console.log(propertyInfo.p_attechment);
+        // makeAPIRequest("post", API_CONST.create_property_data, propertyInfo, null, null)
+        //     .then((response) => {
+        //         console.log(response);
+        //     })
+        //     .catch((error) => {
+        //         console.log(error);
+        //     })
     }
 
     return (
@@ -102,10 +129,10 @@ function PropertyCard() {
                                             row
                                             aria-labelledby="demo-row-radio-buttons-group-label"
                                             name="row-radio-buttons-group"
-                                            defaultValue="commercial"
+                                            defaultValue="residential"
                                         >
-                                            <FormControlLabel value="residential" control={<Radio />} label="Residential" />
-                                            <FormControlLabel value="commercial" control={<Radio />} label="Commercial" />
+                                            <FormControlLabel value="residential" control={<Radio />} label="Residential" onChange={handleChange} />
+                                            <FormControlLabel value="commercial" control={<Radio />} label="Commercial" onChange={handleChange} />
                                         </RadioGroup>
                                     </FormControl>
                                 </div>
@@ -126,10 +153,10 @@ function PropertyCard() {
                             </div>
                         </div>
                     </div>
-                    <BasicInfo handleNextCard={handleNextCard} subPropertyType={subPropertyType} getPropertyDetails={getPropertyDetails} />
+                    <BasicInfo handleNextCard={handleNextCard} subPropertyType={subPropertyType} getPropertyDetails={getPropertyDetails} getPropertyDetails1={getPropertyDetails1} />
                     <ProInternalInfo handleNextCard={handleNextCard} subPropertyType={subPropertyType} getPropertyDetails={getPropertyDetails} />
                     <OwnerInfo handleNextCard={handleNextCard} subPropertyType={subPropertyType} getPropertyDetails={getPropertyDetails} />
-                    <ProAddress handleNextCard={handleNextCard} subPropertyType={subPropertyType} getPropertyDetails={getPropertyDetails} />
+                    <ProAddress handleNextCard={handleNextCard} subPropertyType={subPropertyType} getPropertyDetails={getPropertyDetails} formSubmit={formSubmit} />
                 </div>
             </div>
         </div>
@@ -137,16 +164,3 @@ function PropertyCard() {
 }
 
 export default PropertyCard
-
-
-/**
- <div className="submit-btn mt-5">
-                            <Stack direction="row" spacing={2}>
-                                <Button fullWidth variant="contained"
-                                    endIcon={<SendIcon />} style={{ padding: "15px 0", fontSize: "16px", fontWeight: "600" }}>
-                                    Start Now
-                                </Button>
-                            </Stack>
-                        </div>
-
- */
