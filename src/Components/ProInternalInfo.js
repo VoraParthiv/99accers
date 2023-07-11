@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField';
 function ProInternalInfo({ handleNextCard, subPropertyType, getPropertyDetails }) {
     return (
         <>
-            {/* Commercial */}
+            {/*------------------------------------- Commercial ------------------------------------- */}
             {
                 (subPropertyType == "banquet halls") &&
                 <div className="col-lg-4 col-md-6 col-sm-12" id='internal_info' style={{ display: "none" }}>
@@ -290,7 +290,7 @@ function ProInternalInfo({ handleNextCard, subPropertyType, getPropertyDetails }
                 </div>
             }
 
-            {/* Residentail */}
+            {/*------------------------------------- Residentail ------------------------------------- */}
             {
                 (subPropertyType == "flat/apartment") &&
                 <div className="col-lg-4 col-md-6 col-sm-12" id='internal_info' style={{ display: "none" }}>
@@ -353,7 +353,7 @@ function ProInternalInfo({ handleNextCard, subPropertyType, getPropertyDetails }
                                     <option value="2">2</option>
                                 </select>
                                 <select name='p_totalFloors' onChange={getPropertyDetails} className="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                                    <option disabled selected>Amenities</option>
+                                    <option disabled selected>Total Floors</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                 </select>

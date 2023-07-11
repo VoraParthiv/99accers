@@ -4,12 +4,12 @@ import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
 import Stack from '@mui/material/Stack';
 
-function ProAddress({ handleNextCard, subPropertyType, getPropertyDetails, formSubmit }) {
+function ProAddress({ subPropertyType, getPropertyDetails, formSubmit }) {
 
 
   return (
     <>
-      {/* Commercial */}
+      {/*------------------------------------- Commercial ------------------------------------- */}
       {
         (subPropertyType == "banquet halls" || subPropertyType == "plot" || subPropertyType == "shop" || subPropertyType == "retail" || subPropertyType == "office") &&
         <div className="col-lg-4 col-md-6 col-sm-12" id='address_info' style={{ display: "none" }}>
@@ -51,7 +51,7 @@ function ProAddress({ handleNextCard, subPropertyType, getPropertyDetails, formS
             <div className="submit-btn mt-5">
               <Stack direction="row" spacing={2}>
                 <Button fullWidth variant="contained"
-                  endIcon={<SendIcon />} style={{ padding: "15px 0", fontSize: "16px", fontWeight: "600" }} onClick={formSubmit} type='submit'>
+                  endIcon={<SendIcon />} style={{ padding: "15px 0", fontSize: "16px", fontWeight: "600" }} type='submit'>
                   Submit
                 </Button>
               </Stack>
@@ -60,7 +60,7 @@ function ProAddress({ handleNextCard, subPropertyType, getPropertyDetails, formS
         </div>
       }
 
-      {/* Residentail */}
+      {/*------------------------------------- Residentail ------------------------------------- */}
       {
         (subPropertyType == "flat/apartment" || subPropertyType == 'independent floor' || subPropertyType == 'villa' || subPropertyType == 'farmhouse' || subPropertyType == 'plot') &&
         <div className="col-lg-4 col-md-6 col-sm-12" id='address_info' style={{ display: "none" }}>
@@ -77,18 +77,27 @@ function ProAddress({ handleNextCard, subPropertyType, getPropertyDetails, formS
               <div className="m-0 mt-3" style={{ width: "fit-content" }}>
                 <select name='p_state' onChange={getPropertyDetails} className="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
                   <option disabled selected>Select State</option>
-                  <option value="yes">Living</option>
-                  <option value="no">Died</option>
+                  <option value="gujrat">Gujrat</option>
+                  <option value="maharashtra">Maharashtra</option>
+                  <option value="rajasthan">Rajasthan</option>
+                  <option value="delhi">Delhi</option>
+                  <option value="uttar pradesh">Uttar Pradesh</option>
                 </select>
                 <select name='p_district' onChange={getPropertyDetails} className="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
                   <option disabled selected>Select District</option>
-                  <option value="1">Indian</option>
-                  <option value="2">NRI</option>
+                  <option value="surat">Surat</option>
+                  <option value="mumbai">Mumbai</option>
+                  <option value="jaipur">Jaipur</option>
+                  <option value="north delhi">North Delhi</option>
+                  <option value="ayodhya">Ayodhya</option>
                 </select>
                 <select name='p_city' onChange={getPropertyDetails} className="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
                   <option disabled selected>Select City</option>
-                  <option value="1">Indian</option>
-                  <option value="2">NRI</option>
+                  <option value="surat">Surat</option>
+                  <option value="borivali">Borivali</option>
+                  <option value="jamwa ramgarh">Jamwa Ramgarh</option>
+                  <option value="karawal nagar">Karawal Nagar</option>
+                  <option value="lucknow">Lucknow</option>
                 </select>
               </div>
               <TextField name='p_landMark' onChange={getPropertyDetails} id="outlined-basic" label="Landmark" variant="outlined" style={{ width: "100%", margin: "0", marginTop: "10px" }} />
@@ -102,7 +111,7 @@ function ProAddress({ handleNextCard, subPropertyType, getPropertyDetails, formS
             <div className="submit-btn mt-5">
               <Stack direction="row" spacing={2}>
                 <Button fullWidth variant="contained"
-                  endIcon={<SendIcon />} style={{ padding: "15px 0", fontSize: "16px", fontWeight: "600" }} onClick={formSubmit} type='submit'>
+                  endIcon={<SendIcon />} style={{ padding: "15px 0", fontSize: "16px", fontWeight: "600" }} type='submit' onClick={formSubmit}>
                   Submit
                 </Button>
               </Stack>

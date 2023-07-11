@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField';
 function OwnerInfo({ handleNextCard, subPropertyType, getPropertyDetails }) {
   return (
     <>
-      {/* Commercial */}
+      {/*------------------------------------- Commercial ------------------------------------- */}
       {
         (subPropertyType == "banquet halls" || subPropertyType == "plot" || subPropertyType == "shop" || subPropertyType == "retail" || subPropertyType == "office") &&
         <div className="col-lg-4 col-md-6 col-sm-12" id='owner_info' style={{ display: "none" }}>
@@ -42,7 +42,7 @@ function OwnerInfo({ handleNextCard, subPropertyType, getPropertyDetails }) {
         </div>
       }
 
-      {/* Residentail */}
+      {/*------------------------------------- Residentail ------------------------------------- */}
       {
         (subPropertyType == "flat/apartment" || subPropertyType == 'independent floor' || subPropertyType == 'villa' || subPropertyType == 'farmhouse' || subPropertyType == 'plot') &&
         <div className="col-lg-4 col-md-6 col-sm-12" id='owner_info' style={{ display: "none" }}>

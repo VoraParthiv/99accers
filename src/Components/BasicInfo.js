@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
 import Stack from '@mui/material/Stack';
 
-function BasicInfo({ handleNextCard, subPropertyType, getPropertyDetails,getPropertyDetails1 }) {
+function BasicInfo({ handleNextCard, subPropertyType, getPropertyDetails, image, formSubmit }) {
     return (
         <>
             {/*------------------------------------- Commercial ------------------------------------- */}
@@ -13,21 +13,15 @@ function BasicInfo({ handleNextCard, subPropertyType, getPropertyDetails,getProp
                 <div className="col-lg-4 col-md-6 col-sm-12" id='basic_info' style={{ display: "none" }}>
                     <div className="card-body">
                         <h3 className='mb-4'>Property Basic Information</h3>
-                        <Box
-                            component="form"
-                            sx={{
-                                '& > :not(style)': { m: 1, width: '25ch' },
-                            }}
-                            noValidate
-                            autoComplete="off"
-                            encType='multipart/form-data'
-                        >
-                            <TextField name='p_ownerShipSinces' onChange={getPropertyDetails} id="outlined-basic" label="Owenership Since" variant="outlined" style={{ width: "100%", margin: "0", marginTop: "10px" }} />
-                            <TextField name='p_availableDate' onChange={getPropertyDetails} className='mt-2' id="outlined-basic" label="Availability Date" variant="outlined" style={{ width: "100%", margin: 0 }} />
-                            <TextField name='p_attechment' onChange={getPropertyDetails1} className='mt-2' id="outlined-basic" type='file' variant="outlined" style={{ width: "100%", margin: 0 }} />
-                            <TextField name='p_treeCount' onChange={getPropertyDetails} className='mt-2' id="outlined-basic" label="Tree Count" variant="outlined" style={{ width: "100%", margin: 0 }} />
-                            <TextField name='p_purchasedFrom' onChange={getPropertyDetails} className='mt-2' id="outlined-basic" label="Purchased From" variant="outlined" style={{ width: "100%", margin: 0 }} />
-                        </Box>
+                        <span>Ownershp Since</span>
+                        <TextField name='p_ownerShipSinces' type='date' onChange={getPropertyDetails} id="outlined-basic" variant="outlined" style={{ width: "100%", margin: "0", marginTop: "10px" }} />
+                        <span>Available Date</span>
+                        <TextField name='p_availableDate' type='date' onChange={getPropertyDetails} className='mt-2' id="outlined-basic" variant="outlined" style={{ width: "100%", margin: 0 }} />
+                        <form action="" method="post" encType='multipart/form-data'>
+                            <TextField name='image' onChange={(i) => image(i.target.files[0])} className='mt-2' id="outlined-basic" type='file' variant="outlined" style={{ width: "100%", margin: 0 }} />
+                        </form>
+                        <TextField name='p_treeCount' onChange={getPropertyDetails} className='mt-2' id="outlined-basic" label="Tree Count" variant="outlined" style={{ width: "100%", margin: 0 }} />
+                        <TextField name='p_purchasedFrom' onChange={getPropertyDetails} className='mt-2' id="outlined-basic" label="Purchased From" variant="outlined" style={{ width: "100%", margin: 0 }} />
                         <div className="submit-btn mt-5" onClick={handleNextCard}>
                             <i className="fa-solid fa-forward"></i>
                         </div>
@@ -40,19 +34,14 @@ function BasicInfo({ handleNextCard, subPropertyType, getPropertyDetails,getProp
                 <div className="col-lg-4 col-md-6 col-sm-12" id='basic_info' style={{ display: "none" }}>
                     <div className="card-body">
                         <h3 className='mb-4'>Property Basic Information</h3>
-                        <Box
-                            component="form"
-                            sx={{
-                                '& > :not(style)': { m: 1, width: '25ch' },
-                            }}
-                            noValidate
-                            autoComplete="off"
-                        >
-                            <TextField id="outlined-basic" name='p_ownerShipSinces' onChange={getPropertyDetails} label="Owenership Since" variant="outlined" style={{ width: "100%", margin: "0", marginTop: "10px" }} />
-                            <TextField className='mt-2' id="outlined-basic" name='p_availableDate' onChange={getPropertyDetails} label="Availability Date" variant="outlined" style={{ width: "100%", margin: 0 }} />
-                            <TextField className='mt-2' id="outlined-basic" type='file' name='p_attechment' onChange={getPropertyDetails} variant="outlined" style={{ width: "100%", margin: 0 }} />
-                            <TextField className='mt-2' id="outlined-basic" name='p_purchasedFrom' onChange={getPropertyDetails} label="Purchased From" variant="outlined" style={{ width: "100%", margin: 0 }} />
-                        </Box>
+                        <span>Ownershp Since</span>
+                        <TextField id="outlined-basic" type='date' name='p_ownerShipSinces' onChange={getPropertyDetails} variant="outlined" style={{ width: "100%", margin: "0", marginTop: "10px" }} />
+                        <span>Available Date</span>
+                        <TextField className='mt-2' id="outlined-basic" name='p_availableDate' onChange={getPropertyDetails} type='date' variant="outlined" style={{ width: "100%", margin: 0 }} />
+                        <form action="" method="post" encType='multipart/form-data'>
+                            <TextField className='mt-2' id="outlined-basic" type='file' name='image' onChange={(i) => image(i.target.files[0])} variant="outlined" style={{ width: "100%", margin: 0 }} />
+                        </form>
+                        <TextField className='mt-2' id="outlined-basic" name='p_purchasedFrom' onChange={getPropertyDetails} label="Purchased From" variant="outlined" style={{ width: "100%", margin: 0 }} />
                         <div className="submit-btn mt-5" onClick={handleNextCard}>
                             <i className="fa-solid fa-forward"></i>
                         </div>
@@ -73,7 +62,7 @@ function BasicInfo({ handleNextCard, subPropertyType, getPropertyDetails,getProp
                             noValidate
                             autoComplete="off"
                         >
-                            <TextField name='p_ownerShipSinces' onChange={getPropertyDetails} id="outlined-basic" label="Owenership Since" variant="outlined" style={{ width: "100%", margin: "0", marginTop: "10px" }} />
+                            <TextField type='date' name='p_ownerShipSinces' onChange={getPropertyDetails} id="outlined-basic" variant="outlined" style={{ width: "100%", margin: "0", marginTop: "10px" }} />
                             <TextField name='p_treeCount' onChange={getPropertyDetails} className='mt-2' id="outlined-basic" label="Tree Count" variant="outlined" style={{ width: "100%", margin: 0 }} />
                             <TextField name='p_purchasedFrom' onChange={getPropertyDetails} className='mt-2' id="outlined-basic" label="Purchased From" variant="outlined" style={{ width: "100%", margin: 0 }} />
                         </Box>
@@ -91,21 +80,18 @@ function BasicInfo({ handleNextCard, subPropertyType, getPropertyDetails,getProp
             {
                 (subPropertyType == 'flat/apartment') &&
                 <div className="col-lg-4 col-md-6 col-sm-12" id='basic_info' style={{ display: "none" }}>
-                    <div className="card-body">
+                    <div className="card-body" >
                         <h3 className='mb-4'>Property Basic Information</h3>
-                        <Box
-                            component="form"
-                            sx={{
-                                '& > :not(style)': { m: 1, width: '25ch' },
-                            }}
-                            noValidate
-                            autoComplete="off"
-                        >
-                            <TextField name='p_ownerShipSinces' id="outlined-basic" label="Owenership Since" variant="outlined" style={{ width: "100%", margin: "0", marginTop: "10px" }} onChange={getPropertyDetails} />
-                            <TextField name='p_availableDate' className='mt-2' id="outlined-basic" label="Availability Date" variant="outlined" style={{ width: "100%", margin: 0 }} onChange={getPropertyDetails} />
-                            <TextField name='p_attechment' className='mt-2' id="outlined-basic" type='file' variant="outlined" style={{ width: "100%", margin: 0 }} onChange={getPropertyDetails} />
-                            <TextField name='p_purchasedFrom' className='mt-2' id="outlined-basic" label="Purchased From" variant="outlined" style={{ width: "100%", margin: 0 }} onChange={getPropertyDetails} />
-                        </Box>
+                        <span style={{ fontSize: "20px" }}>Ownershp Since</span>
+                        <TextField name='p_ownerShipSinces' type='date' id="outlined-basic" variant="outlined" style={{ width: "100%", margin: "0", marginTop: "10px" }} onChange={getPropertyDetails} />
+                        <span style={{ fontSize: "20px" }}>Available Date</span>
+                        <TextField name='p_availableDate' className='mt-2' id="outlined-basic" type='date' variant="outlined" style={{ width: "100%", margin: 0 }} onChange={getPropertyDetails} />
+
+                        <form method="post" encType='multipart/form-data'>
+                            <TextField className='mt-2' id="outlined-basic" type='file' name='image' variant="outlined" style={{ width: "100%", margin: 0 }} onChange={(i) => image(i.target.files[0])} />
+                        </form>
+
+                        <TextField name='p_purchasedFrom' className='mt-2' id="outlined-basic" label="Purchased From" variant="outlined" style={{ width: "100%", margin: 0 }} onChange={getPropertyDetails} />
                         <button className="submit-btn mt-5" onClick={handleNextCard}>
                             <i className="fa-solid fa-forward"></i>
                         </button>
@@ -118,24 +104,20 @@ function BasicInfo({ handleNextCard, subPropertyType, getPropertyDetails,getProp
                 <div className="col-lg-4 col-md-6 col-sm-12" id='basic_info' style={{ display: "none" }}>
                     <div className="card-body">
                         <h3 className='mb-4'>Property Basic Information</h3>
-                        <Box
-                            component="form"
-                            sx={{
-                                '& > :not(style)': { m: 1, width: '25ch' },
-                            }}
-                            noValidate
-                            autoComplete="off"
-                            encType='multipart/form-data'
-                        >
-                            <TextField name='p_ownerShipSinces' onChange={getPropertyDetails} id="outlined-basic" label="Owenership Since" variant="outlined" style={{ width: "100%", margin: "0", marginTop: "10px" }} />
-                            <TextField name='p_availableDate' onChange={getPropertyDetails} className='mt-2' id="outlined-basic" label="Availability Date" variant="outlined" style={{ width: "100%", margin: 0 }} />
-                            <TextField name='p_attechment' onChange={getPropertyDetails} className='mt-2' id="outlined-basic" type='file' variant="outlined" style={{ width: "100%", margin: 0 }} />
+                        <form action="" method="post" encType='multipart/form-data'>
+                            <span style={{ fontSize: "20px" }}>Ownershp Since</span>
+                            <TextField name='p_ownerShipSinces' type='date' onChange={getPropertyDetails} id="outlined-basic" variant="outlined" style={{ width: "100%", margin: "0", marginTop: "10px" }} />
+                            <span style={{ fontSize: "20px" }}>Available Date</span>
+                            <TextField name='p_availableDate' onChange={getPropertyDetails} className='mt-2' id="outlined-basic" type='date' variant="outlined" style={{ width: "100%", margin: 0 }} />
+                            <form action="" method="post" encType='multipart/form-data'>
+                                <TextField type='file' name='image' onChange={(i) => image(i.target.files[0])} className='mt-2' id="outlined-basic" variant="outlined" style={{ width: "100%", margin: 0 }} />
+                            </form>
                             <TextField name='p_treeCount' onChange={getPropertyDetails} className='mt-2' id="outlined-basic" label="Tree Count" variant="outlined" style={{ width: "100%", margin: 0 }} />
                             <TextField name='p_purchasedFrom' onChange={getPropertyDetails} className='mt-2' id="outlined-basic" label="Purchased From" variant="outlined" style={{ width: "100%", margin: 0 }} />
-                        </Box>
-                        <div className="submit-btn mt-5" onClick={handleNextCard}>
+                        </form>
+                        <button className="submit-btn mt-5" onClick={handleNextCard}>
                             <i className="fa-solid fa-forward"></i>
-                        </div>
+                        </button>
                     </div>
                 </div>
             }
