@@ -85,12 +85,12 @@ function PropertyCard() {
             }
         }
     }
-    
+
     // Get All Information Of Property
     const getPropertyDetails = (event) => {
         setPropertyInfo({ ...propertyInfo, [event.target.name]: event.target.value })
     }
-        
+
     // Property Data Submit
     const formSubmit = (e) => {
         e.preventDefault()
@@ -107,6 +107,9 @@ function PropertyCard() {
         makeAPIRequest("post", API_CONST.create_property_data, formData, null, null)
             .then((response) => {
                 console.log(response);
+                if (response.status == 200) {
+                    window.location.reload()
+                }
             })
             .catch((error) => {
                 console.log(error);

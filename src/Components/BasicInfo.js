@@ -68,7 +68,7 @@ function BasicInfo({ handleNextCard, subPropertyType, getPropertyDetails, image,
                         </Box>
                         <Stack direction="row" spacing={2} marginTop={4}>
                             <Button fullWidth variant="contained"
-                                endIcon={<SendIcon />} style={{ padding: "15px 0", fontSize: "16px", fontWeight: "600" }} onClick={handleNextCard}>
+                                endIcon={<SendIcon />} style={{ padding: "15px 0", fontSize: "16px", fontWeight: "600" }} onClick={formSubmit}>
                                 Submit
                             </Button>
                         </Stack>
