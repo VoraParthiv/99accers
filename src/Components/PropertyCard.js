@@ -74,7 +74,6 @@ function PropertyCard() {
     // Show Next Card
     const handleNextCard = () => {
         setCardCount(cardCount + 1)
-
         if (cardCount == 1) {
             document.getElementById(`basic_info`).style.display = "block"
         }
