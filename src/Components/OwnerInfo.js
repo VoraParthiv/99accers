@@ -73,9 +73,9 @@ function OwnerInfo({ handleNextCard, subPropertyType, getPropertyDetails }) {
                 </select>
               </div>
             </Box>
-            <button className="submit-btn mt-5" onClick={handleNextCard}>
+            <div className="submit-btn mt-5" onClick={handleNextCard}>
               <i className="fa-solid fa-forward"></i>
-            </button>
+            </div>
           </div>
         </div>
       }

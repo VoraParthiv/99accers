@@ -57,14 +57,12 @@ function ProAddress({ subPropertyType, getPropertyDetails, formSubmit }) {
               <TextField name='p_longitude' onChange={getPropertyDetails} id="outlined-basic" label="Location" variant="outlined" style={{ width: "100%", margin: "0", marginTop: "10px" }} />
               <TextField name='p_reMarkes' onChange={getPropertyDetails} id="outlined-basic" label="Remarks" variant="outlined" style={{ width: "100%", margin: "0", marginTop: "10px" }} />
             </Box>
-            <div className="submit-btn mt-5">
-              <Stack direction="row" spacing={2}>
+              <Stack direction="row" spacing={2} marginTop={4}>
                 <Button fullWidth variant="contained"
                   endIcon={<SendIcon />} style={{ padding: "15px 0", fontSize: "16px", fontWeight: "600" }} type='submit' onClick={formSubmit}>
                   Submit
                 </Button>
               </Stack>
-            </div>
           </div>
         </div>
       }
@@ -117,14 +115,12 @@ function ProAddress({ subPropertyType, getPropertyDetails, formSubmit }) {
               <TextField name='p_longitude' onChange={getPropertyDetails} id="outlined-basic" label="Location" variant="outlined" style={{ width: "100%", margin: "0", marginTop: "10px" }} />
               <TextField name='p_reMarkes' onChange={getPropertyDetails} id="outlined-basic" label="Remarks" variant="outlined" style={{ width: "100%", margin: "0", marginTop: "10px" }} />
             </Box>
-            <div className="submit-btn mt-5">
-              <Stack direction="row" spacing={2}>
+              <Stack direction="row" spacing={2} marginTop={4}>
                 <Button fullWidth variant="contained"
                   endIcon={<SendIcon />} style={{ padding: "15px 0", fontSize: "16px", fontWeight: "600" }} type='submit' onClick={formSubmit}>
                   Submit
                 </Button>
               </Stack>
-            </div>
           </div>
         </div>
       }

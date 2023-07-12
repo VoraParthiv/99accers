@@ -92,9 +92,9 @@ function BasicInfo({ handleNextCard, subPropertyType, getPropertyDetails, image,
                         </form>
 
                         <TextField name='p_purchasedFrom' className='mt-2' id="outlined-basic" label="Purchased From" variant="outlined" style={{ width: "100%", margin: 0 }} onChange={getPropertyDetails} />
-                        <button className="submit-btn mt-5" onClick={handleNextCard}>
+                        <div className="submit-btn mt-5" onClick={handleNextCard}>
                             <i className="fa-solid fa-forward"></i>
-                        </button>
+                        </div>
                     </div>
                 </div>
             }
@@ -115,13 +115,12 @@ function BasicInfo({ handleNextCard, subPropertyType, getPropertyDetails, image,
                             <TextField name='p_treeCount' onChange={getPropertyDetails} className='mt-2' id="outlined-basic" label="Tree Count" variant="outlined" style={{ width: "100%", margin: 0 }} />
                             <TextField name='p_purchasedFrom' onChange={getPropertyDetails} className='mt-2' id="outlined-basic" label="Purchased From" variant="outlined" style={{ width: "100%", margin: 0 }} />
                         </form>
-                        <button className="submit-btn mt-5" onClick={handleNextCard}>
+                        <div className="submit-btn mt-5" onClick={handleNextCard}>
                             <i className="fa-solid fa-forward"></i>
-                        </button>
+                        </div>
                     </div>
                 </div>
             }
-
         </>
     )
 }

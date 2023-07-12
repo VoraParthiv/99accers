@@ -132,9 +132,9 @@ function MainInfo({ handleNextCard, subPropertyType, getPropertyDetails }) {
                         <TextField className='mt-2' id="outlined-basic" label="Total Size" variant="outlined" style={{ width: "100%", margin: 0 }} name='p_totalSize' onChange={getPropertyDetails} />
                         <TextField className='mt-2' id="outlined-basic" label="Use Area" variant="outlined" style={{ width: "100%", margin: 0 }} name='p_useArea' onChange={getPropertyDetails} />
                     </Box>
-                    <button className="submit-btn mt-5" onClick={handleNextCard}>
+                    <div className="submit-btn mt-5" onClick={handleNextCard}>
                         <i className="fa-solid fa-forward"></i>
-                    </button>
+                    </div>
                 </>
             }
 
