@@ -50,7 +50,6 @@ function PropertyCard() {
         setPropertyType(event.target.value)
         makeAPIRequest('get', `${API_CONST.view_property}?type=${event.target.value}`, null, null, null)
             .then((response) => {
-                // console.log("🚀 ~ file: PropertyCard.js:50 ~ .then ~ response:", response)
                 setPropertyData(response.data.data)
             })
             .catch(async (error) => {
@@ -60,12 +59,22 @@ function PropertyCard() {
 
     // Show Sub Property
     const showInputFields = (index, subPropertyType) => {
+        // setCardCount(0)
         setSubPropertyType(subPropertyType)
+        if (cardCount != 1) {
+            // window.location.reload()
+            setCardCount(0)
+            document.getElementById(`basic_info`).style.display = "none"
+            document.getElementById('internal_info').style.display = "none"
+            document.getElementById('owner_info').style.display = "none"
+            document.getElementById('address_info').style.display = "none"
+        }
     }
 
     // Show Next Card
     const handleNextCard = () => {
         setCardCount(cardCount + 1)
+
         if (cardCount == 1) {
             document.getElementById(`basic_info`).style.display = "block"
         }
@@ -119,12 +128,12 @@ function PropertyCard() {
     return (
         <>
             <div className='card-main-body'>
-                <div className="container">
+                <div className="container-1">
                     <div className="row align-items-start">
                         <div className="col-lg-4 col-md-6 col-sm-12">
                             <div className="card-body">
                                 <div className="card-header-part">
-                                    <h3 className='mb-4'>Start posting your property, it's free</h3>
+                                    <h3 className='mb-4'>Start posting your property</h3>
                                 </div>
                                 <div className="card-body-part mt-4">
                                     <div className="looking-property">

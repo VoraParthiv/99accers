@@ -22,7 +22,7 @@ function BasicInfo({ handleNextCard, subPropertyType, getPropertyDetails, image,
                         </form>
                         <TextField name='p_treeCount' onChange={getPropertyDetails} className='mt-2' id="outlined-basic" label="Tree Count" variant="outlined" style={{ width: "100%", margin: 0 }} />
                         <TextField name='p_purchasedFrom' onChange={getPropertyDetails} className='mt-2' id="outlined-basic" label="Purchased From" variant="outlined" style={{ width: "100%", margin: 0 }} />
-                        <div className="submit-btn mt-5" onClick={handleNextCard}>
+                        <div className="submit-btn mt-4" onClick={handleNextCard}>
                             <i className="fa-solid fa-forward"></i>
                         </div>
                     </div>
@@ -42,7 +42,7 @@ function BasicInfo({ handleNextCard, subPropertyType, getPropertyDetails, image,
                             <TextField className='mt-2' id="outlined-basic" type='file' name='image' onChange={(i) => image(i.target.files[0])} variant="outlined" style={{ width: "100%", margin: 0 }} />
                         </form>
                         <TextField className='mt-2' id="outlined-basic" name='p_purchasedFrom' onChange={getPropertyDetails} label="Purchased From" variant="outlined" style={{ width: "100%", margin: 0 }} />
-                        <div className="submit-btn mt-5" onClick={handleNextCard}>
+                        <div className="submit-btn mt-4" onClick={handleNextCard}>
                             <i className="fa-solid fa-forward"></i>
                         </div>
                     </div>
@@ -92,7 +92,7 @@ function BasicInfo({ handleNextCard, subPropertyType, getPropertyDetails, image,
                         </form>
 
                         <TextField name='p_purchasedFrom' className='mt-2' id="outlined-basic" label="Purchased From" variant="outlined" style={{ width: "100%", margin: 0 }} onChange={getPropertyDetails} />
-                        <div className="submit-btn mt-5" onClick={handleNextCard}>
+                        <div className="submit-btn mt-4" onClick={handleNextCard}>
                             <i className="fa-solid fa-forward"></i>
                         </div>
                     </div>
@@ -115,7 +115,7 @@ function BasicInfo({ handleNextCard, subPropertyType, getPropertyDetails, image,
                             <TextField name='p_treeCount' onChange={getPropertyDetails} className='mt-2' id="outlined-basic" label="Tree Count" variant="outlined" style={{ width: "100%", margin: 0 }} />
                             <TextField name='p_purchasedFrom' onChange={getPropertyDetails} className='mt-2' id="outlined-basic" label="Purchased From" variant="outlined" style={{ width: "100%", margin: 0 }} />
                         </form>
-                        <div className="submit-btn mt-5" onClick={handleNextCard}>
+                        <div className="submit-btn mt-4" onClick={handleNextCard}>
                             <i className="fa-solid fa-forward"></i>
                         </div>
                     </div>

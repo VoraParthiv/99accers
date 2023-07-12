@@ -35,7 +35,7 @@ function OwnerInfo({ handleNextCard, subPropertyType, getPropertyDetails }) {
                 </select>
               </div>
             </Box>
-            <div className="submit-btn mt-5" onClick={handleNextCard}>
+            <div className="submit-btn mt-4" onClick={handleNextCard}>
               <i className="fa-solid fa-forward"></i>
             </div>
           </div>
@@ -60,20 +60,20 @@ function OwnerInfo({ handleNextCard, subPropertyType, getPropertyDetails }) {
               <TextField name='p_ownerDetails' onChange={getPropertyDetails} id="outlined-basic" label="Owner Details" variant="outlined" style={{ width: "100%", margin: "0", marginTop: "10px" }} />
               <TextField name='p_ownerContact1' onChange={getPropertyDetails} id="outlined-basic" label="Owner Contact1" variant="outlined" style={{ width: "100%", margin: "0", marginTop: "10px" }} />
               <TextField name='p_ownerContact2' onChange={getPropertyDetails} id="outlined-basic" label="Owner Contact2" variant="outlined" style={{ width: "100%", margin: "0", marginTop: "10px" }} />
-              <div className="m-0 mt-3" style={{ width: "fit-content" }}>
-                <select name='p_ownerStatus' onChange={getPropertyDetails} className="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+              <div className="m-0 mt-3 select-option">
+                <select name='p_ownerStatus' onChange={getPropertyDetails} className="form-select form-select-lg" aria-label=".form-select-lg example">
                   <option disabled selected>Owner Status</option>
                   <option value="yes">Living</option>
                   <option value="no">Died</option>
                 </select>
-                <select name='p_nationality' onChange={getPropertyDetails} className="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                <select name='p_nationality' onChange={getPropertyDetails} className="form-select form-select-lg" aria-label=".form-select-lg example">
                   <option disabled selected>Nationality</option>
                   <option value="1">Indian</option>
                   <option value="2">NRI</option>
                 </select>
               </div>
             </Box>
-            <div className="submit-btn mt-5" onClick={handleNextCard}>
+            <div className="submit-btn mt-4" onClick={handleNextCard}>
               <i className="fa-solid fa-forward"></i>
             </div>
           </div>

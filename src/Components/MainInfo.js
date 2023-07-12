@@ -30,14 +30,15 @@ function MainInfo({ handleNextCard, subPropertyType, getPropertyDetails }) {
                         }}
                         noValidate
                         autoComplete="off"
+                        className='input-fields'
                     >
-                        <TextField id="outlined-basic" label="Measurment" variant="outlined" style={{ width: "100%", margin: "0" }} name='p_masurementUnit' onChange={getPropertyDetails} />
-                        <TextField className='mt-2' id="outlined-basic" label="Total Size" variant="outlined" style={{ width: "100%", margin: 0 }} name='p_totalSize' onChange={getPropertyDetails} />
-                        <TextField className='mt-2' id="outlined-basic" label="Use Area" variant="outlined" style={{ width: "100%", margin: 0 }} name='p_useArea' onChange={getPropertyDetails} />
-                        <TextField className='mt-2' id="outlined-basic" label="Open Area" variant="outlined" style={{ width: "100%", margin: 0 }} name='p_openArea' onChange={getPropertyDetails} />
-                        <TextField className='mt-2' id="outlined-basic" label="Cover Area" variant="outlined" style={{ width: "100%", margin: 0 }} name='p_coverArea' onChange={getPropertyDetails} />
+                        <TextField className='m-0 fields' id="outlined-basic" label="Measurment" variant="outlined" name='p_masurementUnit' onChange={getPropertyDetails} />
+                        <TextField className='m-0 mt-2 fields' id="outlined-basic" label="Total Size" variant="outlined" name='p_totalSize' onChange={getPropertyDetails} />
+                        <TextField className='m-0 mt-2 fields' id="outlined-basic" label="Use Area" variant="outlined" name='p_useArea' onChange={getPropertyDetails} />
+                        <TextField className='m-0 mt-2 fields' id="outlined-basic" label="Open Area" variant="outlined" name='p_openArea' onChange={getPropertyDetails} />
+                        <TextField className='m-0 mt-2 fields' id="outlined-basic" label="Cover Area" variant="outlined" name='p_coverArea' onChange={getPropertyDetails} />
                     </Box>
-                    <div className="submit-btn mt-5" onClick={handleNextCard}>
+                    <div className="submit-btn mt-2" onClick={handleNextCard}>
                         <i className="fa-solid fa-forward"></i>
                     </div>
                 </>
@@ -64,7 +65,7 @@ function MainInfo({ handleNextCard, subPropertyType, getPropertyDetails }) {
                         <TextField className='mt-2' id="outlined-basic" label="Open Area" name='p_openArea' onChange={getPropertyDetails} variant="outlined" style={{ width: "100%", margin: 0 }} />
                         <TextField className='mt-2' id="outlined-basic" label="Cover Area" name='p_coverArea' onChange={getPropertyDetails} variant="outlined" style={{ width: "100%", margin: 0 }} />
                     </Box>
-                    <div className="submit-btn mt-5" onClick={handleNextCard}>
+                    <div className="submit-btn mt-4" onClick={handleNextCard}>
                         <i className="fa-solid fa-forward"></i>
                     </div>
                 </>
@@ -97,7 +98,7 @@ function MainInfo({ handleNextCard, subPropertyType, getPropertyDetails }) {
                         <TextField className='mt-2' id="outlined-basic" label="Open Area" name='' variant="outlined" style={{ width: "100%", margin: 0 }} />
                         <TextField className='mt-2' id="outlined-basic" label="Cover Area" name='' variant="outlined" style={{ width: "100%", margin: 0 }} />
                     </Box>
-                    <div className="submit-btn mt-5" onClick={handleNextCard}>
+                    <div className="submit-btn mt-4" onClick={handleNextCard}>
                         <i className="fa-solid fa-forward"></i>
                     </div>
                 </>
@@ -129,10 +130,10 @@ function MainInfo({ handleNextCard, subPropertyType, getPropertyDetails }) {
                         autoComplete="off"
                     >
                         <TextField id="outlined-basic" label="Measurment" variant="outlined" style={{ width: "100%", margin: "0" }} name='p_masurementUnit' onChange={getPropertyDetails} />
-                        <TextField className='mt-2' id="outlined-basic" label="Total Size" variant="outlined" style={{ width: "100%", margin: 0 }} name='p_totalSize' onChange={getPropertyDetails} />
-                        <TextField className='mt-2' id="outlined-basic" label="Use Area" variant="outlined" style={{ width: "100%", margin: 0 }} name='p_useArea' onChange={getPropertyDetails} />
+                        <TextField className='mt-3' id="outlined-basic" label="Total Size" variant="outlined" style={{ width: "100%", margin: 0 }} name='p_totalSize' onChange={getPropertyDetails} />
+                        <TextField className='mt-3' id="outlined-basic" label="Use Area" variant="outlined" style={{ width: "100%", margin: 0 }} name='p_useArea' onChange={getPropertyDetails} />
                     </Box>
-                    <div className="submit-btn mt-5" onClick={handleNextCard}>
+                    <div className="submit-btn mt-4" onClick={handleNextCard} disabled>
                         <i className="fa-solid fa-forward"></i>
                     </div>
                 </>
@@ -167,7 +168,7 @@ function MainInfo({ handleNextCard, subPropertyType, getPropertyDetails }) {
                         <TextField className='mt-2' id="outlined-basic" label="Use Area" variant="outlined" style={{ width: "100%", margin: 0 }} name='p_useArea' onChange={getPropertyDetails} />
                         <TextField className='mt-2' id="outlined-basic" label="Open Area" variant="outlined" style={{ width: "100%", margin: 0 }} name='p_openArea' onChange={getPropertyDetails} />
                     </Box>
-                    <div className="submit-btn mt-5" onClick={handleNextCard}>
+                    <div className="submit-btn mt-4" onClick={handleNextCard}>
                         <i className="fa-solid fa-forward"></i>
                     </div>
                 </>

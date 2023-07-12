@@ -57,12 +57,12 @@ function ProAddress({ subPropertyType, getPropertyDetails, formSubmit }) {
               <TextField name='p_longitude' onChange={getPropertyDetails} id="outlined-basic" label="Location" variant="outlined" style={{ width: "100%", margin: "0", marginTop: "10px" }} />
               <TextField name='p_reMarkes' onChange={getPropertyDetails} id="outlined-basic" label="Remarks" variant="outlined" style={{ width: "100%", margin: "0", marginTop: "10px" }} />
             </Box>
-              <Stack direction="row" spacing={2} marginTop={4}>
-                <Button fullWidth variant="contained"
-                  endIcon={<SendIcon />} style={{ padding: "15px 0", fontSize: "16px", fontWeight: "600" }} type='submit' onClick={formSubmit}>
-                  Submit
-                </Button>
-              </Stack>
+            <Stack direction="row" spacing={2} marginTop={4}>
+              <Button fullWidth variant="contained"
+                endIcon={<SendIcon />} style={{ padding: "15px 0", fontSize: "16px", fontWeight: "600" }} type='submit' onClick={formSubmit}>
+                Submit
+              </Button>
+            </Stack>
           </div>
         </div>
       }
@@ -107,20 +107,22 @@ function ProAddress({ subPropertyType, getPropertyDetails, formSubmit }) {
                   <option value="lucknow">Lucknow</option>
                 </select>
               </div>
-              <TextField name='p_landMark' onChange={getPropertyDetails} id="outlined-basic" label="Landmark" variant="outlined" style={{ width: "100%", margin: "0", marginTop: "10px" }} />
-              <TextField name='p_area' onChange={getPropertyDetails} id="outlined-basic" label="Area" variant="outlined" style={{ width: "100%", margin: "0", marginTop: "10px" }} />
-              <TextField name='p_sector' onChange={getPropertyDetails} id="outlined-basic" label="Sector" variant="outlined" style={{ width: "100%", margin: "0", marginTop: "10px" }} />
-              <TextField name='p_flatNo' onChange={getPropertyDetails} id="outlined-basic" label="Flat No." variant="outlined" style={{ width: "100%", margin: "0", marginTop: "10px" }} />
-              <TextField name='p_latitude' onChange={getPropertyDetails} id="outlined-basic" label="Location" variant="outlined" style={{ width: "100%", margin: "0", marginTop: "10px" }} />
-              <TextField name='p_longitude' onChange={getPropertyDetails} id="outlined-basic" label="Location" variant="outlined" style={{ width: "100%", margin: "0", marginTop: "10px" }} />
-              <TextField name='p_reMarkes' onChange={getPropertyDetails} id="outlined-basic" label="Remarks" variant="outlined" style={{ width: "100%", margin: "0", marginTop: "10px" }} />
+              <div className='input-fields m-0'>
+                <TextField className='m-0 me-1 fields' name='p_landMark' onChange={getPropertyDetails} id="outlined-basic" label="Landmark" variant="outlined" />
+                <TextField className='m-0 ms-2 fields' name='p_area' onChange={getPropertyDetails} id="outlined-basic" label="Area" variant="outlined" />
+                <TextField className='m-0 me-1 mt-2 fields' name='p_sector' onChange={getPropertyDetails} id="outlined-basic" label="Sector" variant="outlined" />
+                <TextField className='m-0 ms-2 mt-2 fields' name='p_flatNo' onChange={getPropertyDetails} id="outlined-basic" label="Flat No." variant="outlined" />
+                <TextField className='m-0 me-1 mt-2 fields' name='p_latitude' onChange={getPropertyDetails} id="outlined-basic" label="Location" variant="outlined" />
+                <TextField className='m-0 ms-2 mt-2 fields' name='p_longitude' onChange={getPropertyDetails} id="outlined-basic" label="Location" variant="outlined" />
+                <TextField className='m-0 me-1 mt-2 fields' name='p_reMarkes' onChange={getPropertyDetails} id="outlined-basic" label="Remarks" variant="outlined" />
+              </div>
             </Box>
-              <Stack direction="row" spacing={2} marginTop={4}>
-                <Button fullWidth variant="contained"
-                  endIcon={<SendIcon />} style={{ padding: "15px 0", fontSize: "16px", fontWeight: "600" }} type='submit' onClick={formSubmit}>
-                  Submit
-                </Button>
-              </Stack>
+            <Stack direction="row" spacing={2} marginTop={5} className='submit-btn1'>
+              <Button fullWidth variant="contained"
+                endIcon={<SendIcon />} style={{ padding: "15px 0", fontSize: "16px", fontWeight: "600" }} type='submit' onClick={formSubmit} >
+                Submit
+              </Button>
+            </Stack>
           </div>
         </div>
       }
