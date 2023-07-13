@@ -59,10 +59,8 @@ function PropertyCard() {
 
     // Show Sub Property
     const showInputFields = (index, subPropertyType) => {
-        // setCardCount(0)
         setSubPropertyType(subPropertyType)
         if (cardCount != 1) {
-            // window.location.reload()
             setCardCount(0)
             document.getElementById(`basic_info`).style.display = "none"
             document.getElementById('internal_info').style.display = "none"
@@ -112,9 +110,9 @@ function PropertyCard() {
         formData.append('image', image);
         formData.append('allPropertyInfo', JSON.stringify(allPropertyInfo));
 
-        makeAPIRequest("post", API_CONST.create_property_data, formData, null, null)
+        makeAPIRequest("post", API_CONST.add_temp_property, formData, null, null)
             .then((response) => {
-                console.log(response);
+                console.log(response.data);
                 if (response.status == 200) {
                     window.location.reload()
                 }

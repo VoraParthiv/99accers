@@ -11,11 +11,12 @@ function ProListing() {
     const [searchTerm, setSearchTerm] = useState("");
 
     // Get List Of Sub Property Type
+    
     useEffect(() => {
-        makeAPIRequest('get', `${API_CONST.view_property_list}`, null, null, null)
+        makeAPIRequest('get', `${API_CONST.get_temp_property}`, null, null, null)
             .then((response) => {
-                // console.log("🚀 ~ file: PropertyCard.js:28 ~ .then ~ response:", response.data.propertyInfo)
-                setPropertyData(response.data.propertyInfo)
+                // console.log("🚀 ~ file: PropertyCard.js:28 ~ .then ~ response:", response)
+                setPropertyData(response.data.tempProps)
             })
             .catch(async (error) => {
                 console.log(error);
