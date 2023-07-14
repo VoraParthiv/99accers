@@ -9,8 +9,8 @@ function BasicInfo({ handleNextCard, subPropertyType, getPropertyDetails, image,
         <>
             {/*------------------------------------- Commercial ------------------------------------- */}
             {
-                (subPropertyType == 'banquet halls' || subPropertyType == 'plot') &&
-                <div className="col-lg-4 col-md-6 col-sm-12" id='basic_info' style={{ display: "none" }}>
+                (subPropertyType == 'banquet halls' || subPropertyType == 'plots') &&
+                <div className="col-lg-4 col-md-6 col-sm-12" id='basic_info' style={{ display: "block" }}>
                     <div className="card-body">
                         <h3 className='mb-4'>Property Basic Information</h3>
                         <span>Ownershp Since</span>
@@ -31,7 +31,7 @@ function BasicInfo({ handleNextCard, subPropertyType, getPropertyDetails, image,
 
             {
                 (subPropertyType == 'shop' || subPropertyType == 'retail' || subPropertyType == 'office') &&
-                <div className="col-lg-4 col-md-6 col-sm-12" id='basic_info' style={{ display: "none" }}>
+                <div className="col-lg-4 col-md-6 col-sm-12" id='basic_info' style={{ display: "block" }}>
                     <div className="card-body">
                         <h3 className='mb-4'>Property Basic Information</h3>
                         <span>Ownershp Since</span>
@@ -51,7 +51,7 @@ function BasicInfo({ handleNextCard, subPropertyType, getPropertyDetails, image,
 
             {
                 (subPropertyType == 'hotel' || subPropertyType == 'factory') &&
-                <div className="col-lg-4 col-md-6 col-sm-12" id='basic_info' style={{ display: "none" }}>
+                <div className="col-lg-4 col-md-6 col-sm-12" id='basic_info' style={{ display: "block" }}>
                     <div className="card-body">
                         <h3 className='mb-4'>Property Basic Information</h3>
                         <Box
@@ -79,7 +79,7 @@ function BasicInfo({ handleNextCard, subPropertyType, getPropertyDetails, image,
             {/*------------------------------------- Residentail ------------------------------------- */}
             {
                 (subPropertyType == 'flat/apartment') &&
-                <div className="col-lg-4 col-md-6 col-sm-12" id='basic_info' style={{ display: "none" }}>
+                <div className="col-lg-4 col-md-6 col-sm-12" id='basic_info' style={{ display: "block" }}>
                     <div className="card-body" >
                         <h3 className='mb-4'>Property Basic Information</h3>
                         <span style={{ fontSize: "20px" }}>Ownershp Since</span>
@@ -100,8 +100,8 @@ function BasicInfo({ handleNextCard, subPropertyType, getPropertyDetails, image,
             }
 
             {
-                (subPropertyType == 'independent floor' || subPropertyType == 'villa' || subPropertyType == 'farmhouse') &&
-                <div className="col-lg-4 col-md-6 col-sm-12" id='basic_info' style={{ display: "none" }}>
+                (subPropertyType == 'independent floor' || subPropertyType == 'villa' || subPropertyType == 'farmhouse'|| subPropertyType == 'plot') &&
+                <div className="col-lg-4 col-md-6 col-sm-12" id='basic_info' style={{ display: "block" }}>
                     <div className="card-body">
                         <h3 className='mb-4'>Property Basic Information</h3>
                         <form action="" method="post" encType='multipart/form-data'>

@@ -8,7 +8,7 @@ function MainInfo({ handleNextCard, subPropertyType, getPropertyDetails }) {
         <>
             {/*------------------------------------- Commercial ------------------------------------- */}
             {
-                (subPropertyType == 'banquet halls' || subPropertyType == 'plot' || subPropertyType == 'shop' || subPropertyType == 'retail' || subPropertyType == 'office') &&
+                (subPropertyType == 'banquet halls' || subPropertyType == 'plots' || subPropertyType == 'shop' || subPropertyType == 'retail' || subPropertyType == 'office') &&
                 <>
                     <div className="d-flex gap-3 mt-4">
                         <select className="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name='p_furnitureType' onChange={getPropertyDetails} style={{ width: "50%" }}>
@@ -32,11 +32,11 @@ function MainInfo({ handleNextCard, subPropertyType, getPropertyDetails }) {
                         autoComplete="off"
                         className='input-fields'
                     >
-                        <TextField className='m-0 fields' id="outlined-basic" label="Measurment" variant="outlined" name='p_masurementUnit' onChange={getPropertyDetails} />
-                        <TextField className='m-0 mt-2 fields' id="outlined-basic" label="Total Size" variant="outlined" name='p_totalSize' onChange={getPropertyDetails} />
-                        <TextField className='m-0 mt-2 fields' id="outlined-basic" label="Use Area" variant="outlined" name='p_useArea' onChange={getPropertyDetails} />
-                        <TextField className='m-0 mt-2 fields' id="outlined-basic" label="Open Area" variant="outlined" name='p_openArea' onChange={getPropertyDetails} />
-                        <TextField className='m-0 mt-2 fields' id="outlined-basic" label="Cover Area" variant="outlined" name='p_coverArea' onChange={getPropertyDetails} />
+                        <TextField className='m-0 mt-2 fields' id="outlined-basic" label="Measurment" variant="outlined" name='p_masurementUnit' onChange={getPropertyDetails} />
+                        <TextField className='m-0 mt-2 ms-2  fields' id="outlined-basic" label="Total Size" variant="outlined" name='p_totalSize' onChange={getPropertyDetails} />
+                        <TextField className='m-0 mt-2  fields' id="outlined-basic" label="Use Area" variant="outlined" name='p_useArea' onChange={getPropertyDetails} />
+                        <TextField className='m-0 mt-2 ms-2 fields' id="outlined-basic" label="Open Area" variant="outlined" name='p_openArea' onChange={getPropertyDetails} />
+                        <TextField className='m-0 mt-2  fields' id="outlined-basic" label="Cover Area" variant="outlined" name='p_coverArea' onChange={getPropertyDetails} />
                     </Box>
                     <div className="submit-btn mt-2" onClick={handleNextCard}>
                         <i className="fa-solid fa-forward"></i>

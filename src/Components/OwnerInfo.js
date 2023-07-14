@@ -6,8 +6,8 @@ function OwnerInfo({ handleNextCard, subPropertyType, getPropertyDetails }) {
     <>
       {/*------------------------------------- Commercial ------------------------------------- */}
       {
-        (subPropertyType == "banquet halls" || subPropertyType == "plot" || subPropertyType == "shop" || subPropertyType == "retail" || subPropertyType == "office") &&
-        <div className="col-lg-4 col-md-6 col-sm-12" id='owner_info' style={{ display: "none" }}>
+        (subPropertyType == "banquet halls" || subPropertyType == "plots" || subPropertyType == "shop" || subPropertyType == "retail" || subPropertyType == "office") &&
+        <div className="col-lg-4 col-md-6 col-sm-12" id='owner_info' style={{ display: "block" }}>
           <div className="card-body">
             <h3>Property Owner Information</h3>
             <Box
@@ -45,7 +45,7 @@ function OwnerInfo({ handleNextCard, subPropertyType, getPropertyDetails }) {
       {/*------------------------------------- Residentail ------------------------------------- */}
       {
         (subPropertyType == "flat/apartment" || subPropertyType == 'independent floor' || subPropertyType == 'villa' || subPropertyType == 'farmhouse' || subPropertyType == 'plot') &&
-        <div className="col-lg-4 col-md-6 col-sm-12" id='owner_info' style={{ display: "none" }}>
+        <div className="col-lg-4 col-md-6 col-sm-12" id='owner_info' style={{ display: "block" }}>
           <div className="card-body">
             <h3>Property Owner Information</h3>
             <Box

@@ -26,6 +26,11 @@ function PropertyCard() {
         p_ownerName: "", p_ownerDetails: "", p_ownerContact1: "", p_ownerContact12: "", p_ownerStatus: "", p_nationality: "",
         p_state: "", p_district: "", p_city: "", p_landMark: "", p_area: "", p_sector: "", p_flatNo: "", p_latitude: "", p_longitude: "", p_reMarkes: ""
     })
+    const [a, setA] = useState(true)
+    const [b, setB] = useState(true)
+    const [c, setC] = useState(true)
+    const [d, setD] = useState(true)
+    const [e, setE] = useState(true)
 
     // Get List Of Sub Property Type
     useEffect(() => {
@@ -51,6 +56,11 @@ function PropertyCard() {
         makeAPIRequest('get', `${API_CONST.view_property}?type=${event.target.value}`, null, null, null)
             .then((response) => {
                 setPropertyData(response.data.data)
+                setA(false)
+                setB(false)
+                setC(false)
+                setD(false)
+                setE(false)
             })
             .catch(async (error) => {
                 console.log(error);
@@ -60,34 +70,35 @@ function PropertyCard() {
     // Show Sub Property
     const showInputFields = (index, subPropertyType) => {
         setSubPropertyType(subPropertyType)
+        setA(true)
         if (cardCount != 1) {
-            setCardCount(0)
-            document.getElementById(`basic_info`).style.display = "none"
-            document.getElementById('internal_info').style.display = "none"
-            document.getElementById('owner_info').style.display = "none"
-            document.getElementById('address_info').style.display = "none"
+            setCardCount(1)
+            setB(false)
+            setC(false)
+            setD(false)
+            setE(false)
         }
     }
 
     // Show Next Card
     const handleNextCard = () => {
         setCardCount(cardCount + 1)
-        if (cardCount == 1) {
-            document.getElementById(`basic_info`).style.display = "block"
+        if (cardCount === 1) {
+            setB(true)
         }
-        else if (cardCount == 2) {
-            if (subPropertyType != "hotel") {
-                document.getElementById('internal_info').style.display = "block"
+        else if (cardCount === 2) {
+            if (subPropertyType != "hotel" || subPropertyType != "factory") {
+                setC(true)
             }
         }
-        else if (cardCount == 3) {
-            if (subPropertyType != "hotel") {
-                document.getElementById('owner_info').style.display = "block"
+        else if (cardCount === 3) {
+            if (subPropertyType != "hotel" || subPropertyType != "factory") {
+                setD(true)
             }
         }
-        else if (cardCount == 4) {
-            if (subPropertyType != "hotel") {
-                document.getElementById('address_info').style.display = "block"
+        else if (cardCount === 4) {
+            if (subPropertyType != "hotel" || subPropertyType != "factory") {
+                setE(true)
             }
         }
     }
@@ -163,14 +174,24 @@ function PropertyCard() {
                                             })
                                         }
                                     </div>
-                                    <MainInfo handleNextCard={handleNextCard} subPropertyType={subPropertyType} getPropertyDetails={getPropertyDetails} />
+                                    {
+                                        a && <MainInfo handleNextCard={handleNextCard} subPropertyType={subPropertyType} getPropertyDetails={getPropertyDetails} />
+                                    }
                                 </div>
                             </div>
                         </div>
-                        <BasicInfo handleNextCard={handleNextCard} subPropertyType={subPropertyType} getPropertyDetails={getPropertyDetails} image={setImage} />
-                        <ProInternalInfo handleNextCard={handleNextCard} subPropertyType={subPropertyType} getPropertyDetails={getPropertyDetails} />
-                        <OwnerInfo handleNextCard={handleNextCard} subPropertyType={subPropertyType} getPropertyDetails={getPropertyDetails} />
-                        <ProAddress handleNextCard={handleNextCard} subPropertyType={subPropertyType} getPropertyDetails={getPropertyDetails} formSubmit={formSubmit} />
+                        {
+                            b && <BasicInfo handleNextCard={handleNextCard} subPropertyType={subPropertyType} getPropertyDetails={getPropertyDetails} image={setImage} />
+                        }
+                        {
+                            c && <ProInternalInfo handleNextCard={handleNextCard} subPropertyType={subPropertyType} getPropertyDetails={getPropertyDetails} />
+                        }
+                        {
+                            d && <OwnerInfo handleNextCard={handleNextCard} subPropertyType={subPropertyType} getPropertyDetails={getPropertyDetails} />
+                        }
+                        {
+                            e && <ProAddress handleNextCard={handleNextCard} subPropertyType={subPropertyType} getPropertyDetails={getPropertyDetails} formSubmit={formSubmit} />
+                        }
                     </div>
                 </div>
             </div>
