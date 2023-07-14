@@ -120,17 +120,15 @@ function PropertyCard() {
         const formData = new FormData();
         formData.append('image', image);
         formData.append('allPropertyInfo', JSON.stringify(allPropertyInfo));
-        
-        console.log("🚀 ~ file: PropertyCard.js:115 ~ formSubmit ~ allPropertyInfo:", allPropertyInfo)
-        // makeAPIRequest("post", API_CONST.add_temp_property, formData, null, null)
-        //     .then((response) => {
-        //         if (response.status == 200) {
-        //             window.location.reload()
-        //         }
-        //     })
-        //     .catch((error) => {
-        //         console.log(error);
-        //     })
+        makeAPIRequest("post", API_CONST.add_temp_property, formData, null, null)
+            .then((response) => {
+                if (response.status == 200) {
+                    window.location.reload()
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            })
     }
 
     return (
