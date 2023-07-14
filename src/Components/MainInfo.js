@@ -8,7 +8,7 @@ function MainInfo({ handleNextCard, subPropertyType, getPropertyDetails }) {
         <>
             {/*------------------------------------- Commercial ------------------------------------- */}
             {
-                (subPropertyType == 'banquet halls' || subPropertyType == 'plots' || subPropertyType == 'shop' || subPropertyType == 'retail' || subPropertyType == 'office') &&
+                (subPropertyType === 'banquet halls' || subPropertyType === 'plots' || subPropertyType === 'shop' || subPropertyType === 'retail' || subPropertyType === 'office') &&
                 <>
                     <div className="d-flex gap-3 mt-4">
                         <select className="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name='p_furnitureType' onChange={getPropertyDetails} style={{ width: "50%" }}>
@@ -45,7 +45,7 @@ function MainInfo({ handleNextCard, subPropertyType, getPropertyDetails }) {
             }
 
             {
-                subPropertyType == 'hotel' &&
+                subPropertyType === 'hotel' &&
                 <>
                     <div className="mt-4">
                         <select className="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name='p_isAuthorised' onChange={getPropertyDetails} style={{ width: "50%" }}>
@@ -72,7 +72,7 @@ function MainInfo({ handleNextCard, subPropertyType, getPropertyDetails }) {
             }
 
             {
-                subPropertyType == 'factory' &&
+                subPropertyType === 'factory' &&
                 <>
                     <div className="d-flex gap-3 mt-4">
                         <select className="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name='p_furnitureType' onChange={getPropertyDetails} style={{ width: "50%" }}>
@@ -106,7 +106,7 @@ function MainInfo({ handleNextCard, subPropertyType, getPropertyDetails }) {
 
             {/*------------------------------------- Residentail ------------------------------------- */}
             {
-                (subPropertyType == 'flat/apartment') &&
+                (subPropertyType === 'flat/apartment') &&
                 <>
                     <div className="d-flex gap-3 mt-4">
                         <select className="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name='p_furnitureType' onChange={getPropertyDetails} style={{ width: "50%" }}>
@@ -140,7 +140,7 @@ function MainInfo({ handleNextCard, subPropertyType, getPropertyDetails }) {
             }
 
             {
-                (subPropertyType == 'independent floor' || subPropertyType == 'villa' || subPropertyType == 'farmhouse' || subPropertyType == 'plot') &&
+                (subPropertyType === 'independent floor' || subPropertyType === 'villa' || subPropertyType === 'farmhouse' || subPropertyType === 'plot') &&
                 <>
                     <div className="d-flex gap-3 mt-4">
                         <select className="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name='p_furnitureType' onChange={getPropertyDetails} style={{ width: "50%" }}>

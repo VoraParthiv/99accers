@@ -6,7 +6,7 @@ function ProInternalInfo({ handleNextCard, subPropertyType, getPropertyDetails }
         <>
             {/*------------------------------------- Commercial ------------------------------------- */}
             {
-                (subPropertyType == "banquet halls") &&
+                (subPropertyType === "banquet halls") &&
                 <div className="col-lg-4 col-md-6 col-sm-12" id='internal_info' style={{ display: "block" }}>
                     <div className="card-body">
                         <h3 className='mb-4'>Property Internal Information</h3>
@@ -86,7 +86,7 @@ function ProInternalInfo({ handleNextCard, subPropertyType, getPropertyDetails }
             }
 
             {
-                (subPropertyType == "plots") &&
+                (subPropertyType === "plots") &&
                 <div className="col-lg-4 col-md-6 col-sm-12" id='internal_info' style={{ display: "block" }}>
                     <div className="card-body">
                         <h3 className='mb-4'>Property Internal Information</h3>
@@ -141,7 +141,7 @@ function ProInternalInfo({ handleNextCard, subPropertyType, getPropertyDetails }
             }
 
             {
-                (subPropertyType == "shop") &&
+                (subPropertyType === "shop") &&
                 <div className="col-lg-4 col-md-6 col-sm-12" id='internal_info' style={{ display: "block" }}>
                     <div className="card-body">
                         <h3 className='mb-4'>Property Internal Information</h3>
@@ -206,7 +206,7 @@ function ProInternalInfo({ handleNextCard, subPropertyType, getPropertyDetails }
             }
 
             {
-                (subPropertyType == "retail" || subPropertyType == "office") &&
+                (subPropertyType === "retail" || subPropertyType === "office") &&
                 <div className="col-lg-4 col-md-6 col-sm-12" id='internal_info' style={{ display: "block" }}>
                     <div className="card-body">
                         <h3 className='mb-4'>Property Internal Information</h3>
@@ -292,7 +292,7 @@ function ProInternalInfo({ handleNextCard, subPropertyType, getPropertyDetails }
 
             {/*------------------------------------- Residentail ------------------------------------- */}
             {
-                (subPropertyType == "flat/apartment") &&
+                (subPropertyType === "flat/apartment") &&
                 <div className="col-lg-4 col-md-6 col-sm-12" id='internal_info' style={{ display: "block" }}>
                     <div className="card-body">
                         <h3 className='mb-4'>Property Internal Information</h3>
@@ -377,7 +377,7 @@ function ProInternalInfo({ handleNextCard, subPropertyType, getPropertyDetails }
             }
 
             {
-                (subPropertyType == 'independent floor' || subPropertyType == 'villa' || subPropertyType == 'farmhouse') &&
+                (subPropertyType === 'independent floor' || subPropertyType === 'villa' || subPropertyType === 'farmhouse') &&
                 <div className="col-lg-4 col-md-6 col-sm-12" id='internal_info' style={{ display: "block" }}>
                     <div className="card-body">
                         <h3 className='mb-4'>Property Internal Information</h3>
@@ -390,9 +390,9 @@ function ProInternalInfo({ handleNextCard, subPropertyType, getPropertyDetails }
                             autoComplete="off"
                         >
                             <TextField name='p_maxAsk' onChange={getPropertyDetails} id="outlined-basic" label="Max Ask" variant="outlined" style={{ width: "100%", margin: "0", marginTop: "0px" }} />
-                            <div className=" m-0 mt-3" style={{ width: "fit-content" }}>
+                            <div className="select-option m-0 mt-3" style={{ width: "fit-content" }}>
                                 <select name='p_mainRoadFacing' onChange={getPropertyDetails} className="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                                    <option disabled selected>Main Road Facing</option>
+                                    <option disabled selected>Main Road</option>
                                     <option value="yes">Yes</option>
                                     <option value="no">No</option>
                                 </select>
@@ -447,7 +447,7 @@ function ProInternalInfo({ handleNextCard, subPropertyType, getPropertyDetails }
             }
 
             {
-                (subPropertyType == 'plot') &&
+                (subPropertyType === 'plot') &&
                 <div className="col-lg-4 col-md-6 col-sm-12" id='internal_info' style={{ display: "block" }}>
                     <div className="card-body">
                         <h3 className='mb-4'>Property Internal Information</h3>
@@ -460,9 +460,9 @@ function ProInternalInfo({ handleNextCard, subPropertyType, getPropertyDetails }
                             autoComplete="off"
                         >
                             <TextField name='p_maxAsk' onChange={getPropertyDetails} id="outlined-basic" label="Max Ask" variant="outlined" style={{ width: "100%", margin: "0", marginTop: "0px" }} />
-                            <div className=" m-0 mt-3" style={{ width: "fit-content" }}>
+                            <div className="select-option m-0 mt-3" style={{ width: "fit-content" }}>
                                 <select name='p_mainRoadFacing' onChange={getPropertyDetails} className="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                                    <option disabled selected>Main Road Facing</option>
+                                    <option disabled selected>Main Road</option>
                                     <option value="yes">Yes</option>
                                     <option value="no">No</option>
                                 </select>

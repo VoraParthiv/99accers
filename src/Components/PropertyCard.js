@@ -26,11 +26,11 @@ function PropertyCard() {
         p_ownerName: "", p_ownerDetails: "", p_ownerContact1: "", p_ownerContact12: "", p_ownerStatus: "", p_nationality: "",
         p_state: "", p_district: "", p_city: "", p_landMark: "", p_area: "", p_sector: "", p_flatNo: "", p_latitude: "", p_longitude: "", p_reMarkes: ""
     })
-    const [a, setA] = useState(true)
-    const [b, setB] = useState(true)
-    const [c, setC] = useState(true)
-    const [d, setD] = useState(true)
-    const [e, setE] = useState(true)
+    const [a, setA] = useState(false)
+    const [b, setB] = useState(false)
+    const [c, setC] = useState(false)
+    const [d, setD] = useState(false)
+    const [e, setE] = useState(false)
 
     // Get List Of Sub Property Type
     useEffect(() => {
@@ -120,17 +120,17 @@ function PropertyCard() {
         const formData = new FormData();
         formData.append('image', image);
         formData.append('allPropertyInfo', JSON.stringify(allPropertyInfo));
-
-        makeAPIRequest("post", API_CONST.add_temp_property, formData, null, null)
-            .then((response) => {
-                console.log(response.data);
-                if (response.status == 200) {
-                    window.location.reload()
-                }
-            })
-            .catch((error) => {
-                console.log(error);
-            })
+        
+        console.log("🚀 ~ file: PropertyCard.js:115 ~ formSubmit ~ allPropertyInfo:", allPropertyInfo)
+        // makeAPIRequest("post", API_CONST.add_temp_property, formData, null, null)
+        //     .then((response) => {
+        //         if (response.status == 200) {
+        //             window.location.reload()
+        //         }
+        //     })
+        //     .catch((error) => {
+        //         console.log(error);
+        //     })
     }
 
     return (

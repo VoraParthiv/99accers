@@ -9,7 +9,7 @@ function BasicInfo({ handleNextCard, subPropertyType, getPropertyDetails, image,
         <>
             {/*------------------------------------- Commercial ------------------------------------- */}
             {
-                (subPropertyType == 'banquet halls' || subPropertyType == 'plots') &&
+                (subPropertyType === 'banquet halls' || subPropertyType === 'plots') &&
                 <div className="col-lg-4 col-md-6 col-sm-12" id='basic_info' style={{ display: "block" }}>
                     <div className="card-body">
                         <h3 className='mb-4'>Property Basic Information</h3>
@@ -30,7 +30,7 @@ function BasicInfo({ handleNextCard, subPropertyType, getPropertyDetails, image,
             }
 
             {
-                (subPropertyType == 'shop' || subPropertyType == 'retail' || subPropertyType == 'office') &&
+                (subPropertyType === 'shop' || subPropertyType === 'retail' || subPropertyType === 'office') &&
                 <div className="col-lg-4 col-md-6 col-sm-12" id='basic_info' style={{ display: "block" }}>
                     <div className="card-body">
                         <h3 className='mb-4'>Property Basic Information</h3>
@@ -50,7 +50,7 @@ function BasicInfo({ handleNextCard, subPropertyType, getPropertyDetails, image,
             }
 
             {
-                (subPropertyType == 'hotel' || subPropertyType == 'factory') &&
+                (subPropertyType === 'hotel' || subPropertyType === 'factory') &&
                 <div className="col-lg-4 col-md-6 col-sm-12" id='basic_info' style={{ display: "block" }}>
                     <div className="card-body">
                         <h3 className='mb-4'>Property Basic Information</h3>
@@ -62,6 +62,7 @@ function BasicInfo({ handleNextCard, subPropertyType, getPropertyDetails, image,
                             noValidate
                             autoComplete="off"
                         >
+                            <span>Ownershp Since</span>
                             <TextField type='date' name='p_ownerShipSinces' onChange={getPropertyDetails} id="outlined-basic" variant="outlined" style={{ width: "100%", margin: "0", marginTop: "10px" }} />
                             <TextField name='p_treeCount' onChange={getPropertyDetails} className='mt-2' id="outlined-basic" label="Tree Count" variant="outlined" style={{ width: "100%", margin: 0 }} />
                             <TextField name='p_purchasedFrom' onChange={getPropertyDetails} className='mt-2' id="outlined-basic" label="Purchased From" variant="outlined" style={{ width: "100%", margin: 0 }} />
@@ -78,7 +79,7 @@ function BasicInfo({ handleNextCard, subPropertyType, getPropertyDetails, image,
 
             {/*------------------------------------- Residentail ------------------------------------- */}
             {
-                (subPropertyType == 'flat/apartment') &&
+                (subPropertyType === 'flat/apartment') &&
                 <div className="col-lg-4 col-md-6 col-sm-12" id='basic_info' style={{ display: "block" }}>
                     <div className="card-body" >
                         <h3 className='mb-4'>Property Basic Information</h3>
@@ -100,7 +101,7 @@ function BasicInfo({ handleNextCard, subPropertyType, getPropertyDetails, image,
             }
 
             {
-                (subPropertyType == 'independent floor' || subPropertyType == 'villa' || subPropertyType == 'farmhouse'|| subPropertyType == 'plot') &&
+                (subPropertyType === 'independent floor' || subPropertyType === 'villa' || subPropertyType === 'farmhouse' || subPropertyType === 'plot') &&
                 <div className="col-lg-4 col-md-6 col-sm-12" id='basic_info' style={{ display: "block" }}>
                     <div className="card-body">
                         <h3 className='mb-4'>Property Basic Information</h3>
