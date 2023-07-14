@@ -10,7 +10,7 @@ function ProAddress({ subPropertyType, getPropertyDetails, formSubmit }) {
       {/*------------------------------------- Commercial ------------------------------------- */}
       {
         (subPropertyType === "banquet halls" || subPropertyType === "plots" || subPropertyType === "shop" || subPropertyType === "retail" || subPropertyType === "office") &&
-        <div className="col-lg-4 col-md-6 col-sm-12" id='address_info' style={{ display: "block" }}>
+        <div className="col-lg-4 col-md-6 col-sm-12">
           <div className="card-body">
             <h3>Property Address</h3>
             <Box
@@ -68,7 +68,7 @@ function ProAddress({ subPropertyType, getPropertyDetails, formSubmit }) {
       {/*------------------------------------- Residentail ------------------------------------- */}
       {
         (subPropertyType === "flat/apartment" || subPropertyType === 'independent floor' || subPropertyType === 'villa' || subPropertyType === 'farmhouse' || subPropertyType === 'plot') &&
-        <div className="col-lg-4 col-md-6 col-sm-12" id='address_info' style={{ display: "block" }}>
+        <div className="col-lg-4 col-md-6 col-sm-12">
           <div className="card-body">
             <h3>Property Address</h3>
             <Box

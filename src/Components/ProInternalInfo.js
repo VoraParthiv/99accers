@@ -7,7 +7,7 @@ function ProInternalInfo({ handleNextCard, subPropertyType, getPropertyDetails }
             {/*------------------------------------- Commercial ------------------------------------- */}
             {
                 (subPropertyType === "banquet halls") &&
-                <div className="col-lg-4 col-md-6 col-sm-12" id='internal_info' style={{ display: "block" }}>
+                <div className="col-lg-4 col-md-6 col-sm-12">
                     <div className="card-body">
                         <h3 className='mb-4'>Property Internal Information</h3>
                         <Box
@@ -87,7 +87,7 @@ function ProInternalInfo({ handleNextCard, subPropertyType, getPropertyDetails }
 
             {
                 (subPropertyType === "plots") &&
-                <div className="col-lg-4 col-md-6 col-sm-12" id='internal_info' style={{ display: "block" }}>
+                <div className="col-lg-4 col-md-6 col-sm-12">
                     <div className="card-body">
                         <h3 className='mb-4'>Property Internal Information</h3>
                         <Box
@@ -142,7 +142,7 @@ function ProInternalInfo({ handleNextCard, subPropertyType, getPropertyDetails }
 
             {
                 (subPropertyType === "shop") &&
-                <div className="col-lg-4 col-md-6 col-sm-12" id='internal_info' style={{ display: "block" }}>
+                <div className="col-lg-4 col-md-6 col-sm-12">
                     <div className="card-body">
                         <h3 className='mb-4'>Property Internal Information</h3>
                         <Box
@@ -207,7 +207,7 @@ function ProInternalInfo({ handleNextCard, subPropertyType, getPropertyDetails }
 
             {
                 (subPropertyType === "retail" || subPropertyType === "office") &&
-                <div className="col-lg-4 col-md-6 col-sm-12" id='internal_info' style={{ display: "block" }}>
+                <div className="col-lg-4 col-md-6 col-sm-12">
                     <div className="card-body">
                         <h3 className='mb-4'>Property Internal Information</h3>
                         <Box
@@ -293,7 +293,7 @@ function ProInternalInfo({ handleNextCard, subPropertyType, getPropertyDetails }
             {/*------------------------------------- Residentail ------------------------------------- */}
             {
                 (subPropertyType === "flat/apartment") &&
-                <div className="col-lg-4 col-md-6 col-sm-12" id='internal_info' style={{ display: "block" }}>
+                <div className="col-lg-4 col-md-6 col-sm-12">
                     <div className="card-body">
                         <h3 className='mb-4'>Property Internal Information</h3>
                         <Box
@@ -378,7 +378,7 @@ function ProInternalInfo({ handleNextCard, subPropertyType, getPropertyDetails }
 
             {
                 (subPropertyType === 'independent floor' || subPropertyType === 'villa' || subPropertyType === 'farmhouse') &&
-                <div className="col-lg-4 col-md-6 col-sm-12" id='internal_info' style={{ display: "block" }}>
+                <div className="col-lg-4 col-md-6 col-sm-12">
                     <div className="card-body">
                         <h3 className='mb-4'>Property Internal Information</h3>
                         <Box
@@ -448,7 +448,7 @@ function ProInternalInfo({ handleNextCard, subPropertyType, getPropertyDetails }
 
             {
                 (subPropertyType === 'plot') &&
-                <div className="col-lg-4 col-md-6 col-sm-12" id='internal_info' style={{ display: "block" }}>
+                <div className="col-lg-4 col-md-6 col-sm-12">
                     <div className="card-body">
                         <h3 className='mb-4'>Property Internal Information</h3>
                         <Box
